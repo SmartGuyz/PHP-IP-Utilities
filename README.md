@@ -2,7 +2,7 @@
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 
-A simple PHP helper class, full of usable IPv4 and IPv6 utilities.\
+A simple PHP helper class, full of usable IPv4 and IPv6 utilities.
 
 USAGE
 ============

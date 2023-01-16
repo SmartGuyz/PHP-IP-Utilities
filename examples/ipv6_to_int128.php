@@ -4,7 +4,7 @@ require '../src/cIPUtils.class.php';
 // Check for BCMath
 if(!extension_loaded('gmp'))
 {
-	die('BCMath not loaded!');
+	die('GMP not loaded!');
 }
 
 // A link local address for this examples

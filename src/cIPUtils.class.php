@@ -1,6 +1,9 @@
 <?php
 class cIPUtils
 {
+	/*
+	 * IPv6 Utils
+	 */
 	public static function getExpandedIPv6(string $sIPv6): false|string
 	{
 		if(!filter_var($sIPv6, FILTER_VALIDATE_IP,FILTER_FLAG_IPV6))
@@ -39,16 +42,10 @@ class cIPUtils
 		// : Need to be added back
 		$sResult = implode(":", $aParts);
 
-		// Last check
-		if(strlen($sResult) !== 39)
-		{
-			return false;
-
-		}
-		return $sResult;
+		return ((!filter_var($sResult, FILTER_VALIDATE_IP,FILTER_FLAG_IPV6) OR strlen($sResult) !== 39) ? false : $sResult);
 	}
 
-	final public static function IPv6_to_Int128($sIPv6): false|string
+	final public static function IPv6_to_Int128(string $sIPv6): false|string
 	{
 		if(!filter_var($sIPv6, FILTER_VALIDATE_IP,FILTER_FLAG_IPV6))
 		{
@@ -63,7 +60,7 @@ class cIPUtils
 		return gmp_strval(gmp_init(ltrim($sNum, '0'), 2));
 	}
 
-	final public static function IPv6_to_Int64($sIPv6): false|array
+	final public static function IPv6_to_Int64(string $sIPv6): false|array
 	{
 		if(!filter_var($sIPv6, FILTER_VALIDATE_IP,FILTER_FLAG_IPV6))
 		{

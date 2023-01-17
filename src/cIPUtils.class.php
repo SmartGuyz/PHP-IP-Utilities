@@ -107,4 +107,24 @@ class cIPUtils
 		}
 		return inet_ntop(inet_pton(($sResult)));
 	}
+
+	final public static function getIPv6Prefix(string $sIPv6): int
+	{
+		if(!filter_var($sIPv6, FILTER_VALIDATE_IP,FILTER_FLAG_IPV6))
+		{
+			return false;
+		}
+
+		$sIPv6      = self::getExpandedIPv6($sIPv6);
+		$aIPv6Parts = explode(':', $sIPv6);
+		$iCount     = 0;
+		foreach($aIPv6Parts as $sPart)
+		{
+			if($sPart === '0000')
+			{
+				$iCount++;
+			}
+		}
+		return (int)(128 - ($iCount * 16));
+	}
 }

@@ -12,12 +12,14 @@ Then instance the class and play around with all the methods:
 
     cIPUtils::IPv6_to_Int64(string $sIPv6): false|array
 
-    getExpandedIPv6(string $sIPv6): false|string
+    cIPUtils::getExpandedIPv6(string $sIPv6): false|string
 
-    IPv6_to_Int128(string $sIPv6): false|string
+    cIPUtils::IPv6_to_Int128(string $sIPv6): false|string
 
-    IPv6_to_Int64(string $sIPv6): false|array
+    cIPUtils::IPv6_to_Int64(string $sIPv6): false|array
 
-    Int64_to_IPv6(array $aIP): false|string
+    cIPUtils::Int64_to_IPv6(array $aIP): false|string
+
+    cIPUtils::getIPv6Prefix(string $sIPv6): int
 
 That is all. Goodluck with it :)
